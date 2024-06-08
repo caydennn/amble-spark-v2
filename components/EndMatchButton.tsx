@@ -6,6 +6,7 @@ import { db } from "@/db/db";
 import { matches } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { MatchStatus } from "@/lib/enums";
+import { DoorClosedIcon, LogOutIcon } from "lucide-react";
 
 export default async function EndMatchButton({ matchId }: { matchId: number }) {
   const supabase = createClient();
@@ -29,9 +30,13 @@ export default async function EndMatchButton({ matchId }: { matchId: number }) {
 
   return user ? (
     <div className="flex items-center gap-4">
-      <form action={leaveMatch}>
-        <Button className="py-2 px-4 rounded-md no-underline ">
+      <form action={leaveMatch} className="text-white">
+        <Button
+          variant={"secondary"}
+          className="py-2 px-4 rounded-md no-underline group "
+        >
           leave match
+          <LogOutIcon className=" ml-2 transition-transform  group-hover:animate-wiggle" />
         </Button>
       </form>
     </div>

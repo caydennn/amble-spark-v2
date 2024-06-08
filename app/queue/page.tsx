@@ -42,12 +42,22 @@ const QueuePage = () => {
         console.log(payload);
         const user = payload.new as User;
         if (user.inQueue === false) {
+
           // get the active match
-          await getActiveUserMatches(user.id);
+          const matches = await getActiveUserMatches(user.id);
+          if (matches.length > 0) {
+            console.log("joining queue from queue page via realtime ")
+            router.replace(`/matches/${matches[0].matches?.id}`);
+          }
         }
       }
     );
-    console.log("subscribed to channel", channel);
+    channel.subscribe((status) => {
+      if (status === "SUBSCRIBED") {
+        console.log("subscribed to channel", channel);
+      }
+    });
+
     return () => {
       channel.unsubscribe();
       if (userId) removeFromQueue(userId);

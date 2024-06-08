@@ -5,64 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1717823957393,
-      "tag": "0000_luxuriant_prodigy",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1717849431262,
-      "tag": "0001_pale_ultimo",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1717849538894,
-      "tag": "0002_flaky_silver_surfer",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1717850112958,
-      "tag": "0003_messy_sway",
-      "breakpoints": true
-    },
-    {
-      "idx": 4,
-      "version": "7",
-      "when": 1717850453465,
-      "tag": "0004_chemical_doctor_spectrum",
-      "breakpoints": true
-    },
-    {
-      "idx": 5,
-      "version": "7",
-      "when": 1717857805441,
-      "tag": "0005_new_clint_barton",
-      "breakpoints": true
-    },
-    {
-      "idx": 6,
-      "version": "7",
-      "when": 1717859289836,
-      "tag": "0006_hot_bug",
-      "breakpoints": true
-    },
-    {
-      "idx": 7,
-      "version": "7",
-      "when": 1717870355964,
-      "tag": "0007_remarkable_big_bertha",
-      "breakpoints": true
-    },
-    {
-      "idx": 8,
-      "version": "7",
-      "when": 1717881562375,
-      "tag": "0008_overconfident_raider",
+      "when": 1717882354106,
+      "tag": "0000_curvy_patch",
       "breakpoints": true
     }
   ]
