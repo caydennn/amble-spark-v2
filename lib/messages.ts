@@ -16,6 +16,7 @@ import {
 } from "@/db/schema";
 import { and, count, desc, eq, gt, ne } from "drizzle-orm";
 import { MessageRole } from "@/lib/enums";
+import { env } from "@/env";
 
 export async function handlePostMessageActions(
   matchId: string,
@@ -76,7 +77,9 @@ export async function handlePostMessageActions(
     otherUser: numMsgsFromOtherUser[0].count,
   };
 
-  const shouldSendPrompt = msgCnt.currentUser >= 3 && msgCnt.otherUser >= 3;
+  const shouldSendPrompt =
+    msgCnt.currentUser >= env.PROMPT_THRESHOLD &&
+    msgCnt.otherUser >= env.PROMPT_THRESHOLD;
   if (!shouldSendPrompt) {
     console.log("Not enough messages to send prompt", msgCnt);
     return;
