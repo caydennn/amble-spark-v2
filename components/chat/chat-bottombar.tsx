@@ -29,8 +29,6 @@ export default function ChatBottombar({
     setMessage(event.target.value);
   };
 
-
-
   const handleSend = () => {
     if (message.trim()) {
       sendMessage(message.trim(), matchId.toString(), currentUserId);
@@ -79,8 +77,8 @@ export default function ChatBottombar({
             onKeyDown={handleKeyPress}
             onChange={handleInputChange}
             name="message"
-            placeholder="Type a message..."
-            className=" p-5 w-full border rounded-lg flex items-center h-9 resize-none overflow-hidden bg-background"
+            placeholder="type a message..."
+            className=" p-5 w-full border rounded-lg flex items-center h-9 resize-none overflow-hidden bg-background border-none"
           ></Textarea>
         </motion.div>
 

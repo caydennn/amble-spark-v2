@@ -77,7 +77,7 @@ const QueuePage = () => {
       </div>
     );
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen gap-8 bg-gray-100 dark:bg-gray-950">
+    <div className="flex flex-col items-center justify-center w-full h-screen gap-8 ">
       <div className="relative w-48 h-48">
         {/* <LoaderIcon className="absolute inset-0 w-full h-full text-primary" /> */}
         <Lottie animationData={queue_circle} size={56} loop={true} />
@@ -94,7 +94,7 @@ const QueuePage = () => {
           router.replace("/");
         }}
       >
-        Cancel
+        cancel
       </Button>
     </div>
   );

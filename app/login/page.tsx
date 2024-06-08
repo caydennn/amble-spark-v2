@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
+import { headers } from "next/headers";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "./submit-button";
 
@@ -100,20 +100,20 @@ export default async function Login({
         className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground"
       >
         <label className="text-md" htmlFor="name">
-          Name
+          what should we call you?
         </label>
         <input
-          className="rounded-md px-4 py-2 bg-inherit border mb-6"
+          className="rounded-md px-4 py-2 bg-inherit border border-secondary mb-6"
           id="name"
           name="name"
-          placeholder="Name"
+          placeholder="enter your name"
           required
         />
         <SubmitButton
           className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
-          pendingText="Signing In..."
+          pendingText="signing you in..."
         >
-          Sign In Anonymously
+          sign in
         </SubmitButton>
         {/* <SubmitButton
           formAction={signUp}

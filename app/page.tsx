@@ -13,9 +13,9 @@ export default async function Index() {
 
   return (
     <div className="flex-1 w-full flex flex-col gap-20 items-center h-vh">
-      <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm group">
-          <Link href="/" className="flex items-center space-x-2">
+      <nav className="w-full flex justify-center border-b border-b-foreground/0 h-16">
+        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm ">
+          <Link href="/" className="flex items-center space-x-2 group">
             <Sparkles
               size={24}
               className="text-primary transition-transform group-hover:rotate-12 group-hover:scale-125"

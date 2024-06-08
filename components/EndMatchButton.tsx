@@ -33,7 +33,7 @@ export default async function EndMatchButton({ matchId }: { matchId: number }) {
       <form action={leaveMatch} className="text-white">
         <Button
           variant={"secondary"}
-          className="py-2 px-4 rounded-md no-underline group "
+          className="py-2 px-4 rounded-md no-underline group text-slate-800"
         >
           leave match
           <LogOutIcon className=" ml-2 transition-transform  group-hover:animate-wiggle" />

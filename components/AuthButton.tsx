@@ -1,4 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
+import { LogOutIcon } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -19,10 +20,10 @@ export default async function AuthButton() {
 
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.user_metadata.name}!
       <form action={signOut}>
         <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
-          Logout
+          {/* logout */}
+          <LogOutIcon className="hover:scale-110 text-secondary"/>
         </button>
       </form>
     </div>

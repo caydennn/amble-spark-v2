@@ -71,10 +71,10 @@ export function ChatList({ messages, currentUser, match }: ChatListProps) {
                       message.role === MessageRole.user
                         ? `${
                             message.sentBy == currentUser.id
-                              ? "bg-gray-200"
-                              : "bg-gray-700 text-white"
+                              ? "bg-orange-200"
+                              : "bg-gray-600 text-white"
                           }`
-                        : "bg-orange-200 text-black lowercase"
+                        : "bg-primary text-black lowercase"
                     )}
                   >
                     {message.role === MessageRole.assistant && (<span className="text-md font-semibold">spark: </span>)}

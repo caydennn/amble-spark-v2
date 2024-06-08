@@ -37,7 +37,7 @@ const Home = async () => {
             match me
             <Sparkles
               size={24}
-              className="text-white ml-2 transition-transform group-hover:rotate-12 group-hover:scale-110"
+              className="text- ml-2 transition-transform group-hover:rotate-12 group-hover:scale-110"
             />
           </MatchMeButton>
         </form>
