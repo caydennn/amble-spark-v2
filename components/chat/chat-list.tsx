@@ -67,7 +67,7 @@ export function ChatList({ messages, currentUser, match }: ChatListProps) {
                 <div className="flex gap-3 items-center">
                   <span
                     className={cn(
-                      "bg-accent p-3 rounded-md max-w-xs",
+                      "p-3 rounded-md max-w-xs",
                       message.role === MessageRole.user
                         ? `${
                             message.sentBy == currentUser.id

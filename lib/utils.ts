@@ -40,7 +40,8 @@ export const generatePlaceholderImage = (
   const letter = text.length > 0 ? text[0].toLowerCase() : "a";
   const background = "FFE8D2";
   // const background = Colors.light.secondary.split("#")[1];
-  const textColor = "9E6A4E";
+  // const textColor = "9E6A4E";
+  const textColor = "C65E74";
   const font = "Lora";
   const url = `${PlaceholderApi}/${size}/${background}/${textColor}/png?text=${letter}&font=${font}`;
   return url;

@@ -78,7 +78,7 @@ export default function ChatBottombar({
             onChange={handleInputChange}
             name="message"
             placeholder="type a message..."
-            className=" p-5 w-full border rounded-lg flex items-center h-9 resize-none overflow-hidden bg-background border-none"
+            className=" p-5 w-full border rounded-lg flex items-center h-9 resize-none overflow-hidden bg-background "
           ></Textarea>
         </motion.div>
 

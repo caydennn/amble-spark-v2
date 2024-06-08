@@ -50,8 +50,8 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <div className="flex flex-col  w-full h-dvh">
       {currentMatch && (
-        <div className="flex flex-col h-full bg-accent-200 justify-end">
-          <div className="absolute top-0 bg-orange-300 w-full flex justify-around min-h-[50px] items-center font-bold">
+        <div className="flex flex-col h-full  justify-end">
+          <div className="absolute top-0 bg-accent w-full flex justify-around min-h-[50px] items-center font-bold">
             <BackToHomeButton />
             <div className="flex flex-row space-x-2 items-center">
               <Avatar className="flex justify-center items-center">

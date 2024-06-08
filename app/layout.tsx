@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className={taviraj.className + " " + rubik.className + " " + "bg-accent"} >
+      <body className={taviraj.className + " " + rubik.className + " " + "bg-white"} >
         <main className="min-h-screen flex flex-col items-center">
           {children}
         </main>

@@ -24,8 +24,8 @@ const Home = async () => {
   const [activeMatches] = await getActiveUserMatches(user.id);
   console.log(activeMatches);
   return (
-    <div className="flex-1 w-full flex flex-col gap-10">
-      <div className="flex flex-col w-full">
+    <div className="flex-1 w-full flex flex-col gap-10 md:px-6 px-4">
+      <div className="flex flex-col w-full ">
         <Typography variant="h1">hey, {user.user_metadata.name}</Typography>
         <Typography variant="lead">
           ready to spark your next connection?

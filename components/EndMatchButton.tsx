@@ -32,7 +32,7 @@ export default async function EndMatchButton({ matchId }: { matchId: number }) {
     <div className="flex items-center gap-4">
       <form action={leaveMatch} className="text-white">
         <Button
-          variant={"secondary"}
+          variant={"ghost"}
           className="py-2 px-4 rounded-md no-underline group text-slate-800"
         >
           leave match
