@@ -1,0 +1,1 @@
+ALTER TABLE "match_prompts" ADD COLUMN "created_at" timestamp DEFAULT now() NOT NULL;
