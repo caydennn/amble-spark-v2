@@ -11,6 +11,9 @@ import queue_circle from "@/assets/queue_circle.json";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic'
+
+
 const QueuePage = () => {
   const searchParams = useSearchParams();
   const supabase = createClient();
