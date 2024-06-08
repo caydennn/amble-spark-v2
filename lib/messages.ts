@@ -110,6 +110,10 @@ export async function handlePostMessageActions(
     console.log("Current level", currentLevel, summary.ready);
     if (summary.ready == "yes") {
       currentLevel += 1;
+      // cap at 5 
+      if (currentLevel > 5) {
+        currentLevel = 5;
+      }
       console.log("Incrementing level", currentLevel);
       await updateMatchLevel(matchId, currentLevel);
       console.log("Updated match level", currentLevel);
