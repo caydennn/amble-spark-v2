@@ -24,8 +24,7 @@ export async function getActiveUserMatches(callingUserId: string) {
     .leftJoin(matches, eq(matches.id, matchUsers.matchId))
     .where(
       and(eq(matches.status, MatchStatus.active), eq(users.id, callingUserId))
-    )
-    .limit(1);
+    );
 }
 
 export async function getQueueingUser(callingUserId: string) {
@@ -99,8 +98,19 @@ export async function createMatchWithUsers(
       })
       .execute();
 
-    await removeFromQueue(callingUserId, otherUser.id);
-    console.log("removed from queue");
+    await db
+      .update(users)
+      .set({ inQueue: false })
+      .where(eq(users.id, callingUserId))
+      .execute();
+
+    await db
+      .update(users)
+      .set({ inQueue: false })
+      .where(eq(users.id, otherUser.id))
+      .execute();
+
+    console.log("removed users from queue");
     return match;
   });
   console.log(
@@ -111,28 +121,19 @@ export async function createMatchWithUsers(
   return resp;
 }
 
-export async function removeFromQueue(
-  callingUserId: string,
-  otherUserId: string
-) {
-  await db
-    .update(users)
-    .set({ inQueue: false })
-    .where(eq(users.id, callingUserId))
-    .execute();
-
-  await db
-    .update(users)
-    .set({ inQueue: false })
-    .where(eq(users.id, otherUserId))
-    .execute();
-}
-
 export async function addToQueue(callingUserId: string) {
   await db
     .update(users)
     .set({ inQueue: true })
     .where(eq(users.id, callingUserId))
+    .execute();
+}
+
+export async function removeFromQueue(userId: string) {
+  return await db
+    .update(users)
+    .set({ inQueue: false })
+    .where(eq(users.id, userId))
     .execute();
 }
 

@@ -77,24 +77,51 @@ export async function handlePostMessageActions(
   };
 
   const shouldSendPrompt = msgCnt.currentUser >= 3 && msgCnt.otherUser >= 3;
-  if (shouldSendPrompt) {
+  if (!shouldSendPrompt) {
+    console.log("Not enough messages to send prompt", msgCnt);
+    return;
+  }
+
+  try {
+    // get the fresh match
+    const latestMatch = await db.query.matches.findFirst({
+      where: eq(matches.id, Number(matchId)),
+    });
+
+    if (latestMatch?.generatingPrompt) {
+      console.log("Prompt already being generated for match", matchId);
+      return;
+    }
+
+    // lock the match to prevent multiple prompts being generated
+    await db
+      .update(matches)
+      .set({ generatingPrompt: true })
+      .where(eq(matches.id, Number(matchId)));
     const matchContext = await getMatchContext(matchId);
     const { factors, summary } = await evaluateConversationPerformance(
       matchContext
     );
 
     let currentLevel = match.level;
-    console.log("Current level", currentLevel, summary.ready)
+    console.log("Current level", currentLevel, summary.ready);
     if (summary.ready == "yes") {
       currentLevel += 1;
-      console.log("Incrementing level", currentLevel)
+      console.log("Incrementing level", currentLevel);
       await updateMatchLevel(matchId, currentLevel);
       console.log("Updated match level", currentLevel);
     }
     const { prompts } = await generatePrompts(currentLevel, matchContext);
 
-    await sendPromptToMatch(matchId, prompts[0]);
-  } else {
-    console.log("Not enough messages to send prompt", msgCnt);
+    // choose random prompt to send
+    const toSend = prompts[Math.floor(Math.random() * prompts.length)];
+    await sendPromptToMatch(matchId, toSend);
+  } catch (e) {
+    console.error("Error generating prompt", e);
+  } finally {
+    await db
+      .update(matches)
+      .set({ generatingPrompt: false })
+      .where(eq(matches.id, Number(matchId)));
   }
 }

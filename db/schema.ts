@@ -22,6 +22,7 @@ export const matches = pgTable("matches", {
   id: serial("id").primaryKey(),
   level: integer("level").default(1).notNull(),
   status: text("status").notNull().default(MatchStatus.active),
+  generatingPrompt: boolean("generatingPrompt").default(false),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 

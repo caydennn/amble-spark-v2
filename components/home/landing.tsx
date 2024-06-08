@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-
+import hero from "@/assets/hero.svg"
+import Image from "next/image";
 const Landing = () => {
   return (
     <div className="animate-in  gap-20 opacity-100 px-3">
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+      <section className="w-full py-6 md:py-24 lg:py-32 xl:py-24">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_550px] lowercase">
             <div className="flex flex-col justify-center space-y-4">
@@ -31,8 +32,9 @@ const Landing = () => {
                 </Button>
               </div>
             </div>
-            <img
-              src="/placeholder.svg"
+            <Image
+              // src="/placeholder.svg"
+              src={hero}
               width="550"
               height="550"
               alt="Hero"

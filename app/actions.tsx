@@ -10,7 +10,6 @@ import {
   getQueueingUser,
   getQueueingUsers,
   createMatchWithUsers,
-  removeFromQueue,
   addToQueue,
   insertMessage,
 } from "@/db/operations";
@@ -46,7 +45,6 @@ export async function handleMatching(callingUserId: string) {
   const queueingUsers = await getQueueingUsers(callingUserId);
 
   if (queueingUsers.length > 0) {
-
     const otherUser = queueingUsers[0];
     const createdMatch = await createMatchWithUsers(callingUserId, otherUser);
 

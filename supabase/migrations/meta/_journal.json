@@ -57,6 +57,13 @@
       "when": 1717870355964,
       "tag": "0007_remarkable_big_bertha",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1717881562375,
+      "tag": "0008_overconfident_raider",
+      "breakpoints": true
     }
   ]
 }

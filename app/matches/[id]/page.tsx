@@ -44,7 +44,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   // console.log("match", match);
 
   const currentMatch = match[0]?.matches;
-  // const otherUser = match[0]?.users.find((u) => u.id !== currentUser.id);
+
   const avatar = generatePlaceholderImage(otherUser.name || "a", "256x256");
 
   return (
