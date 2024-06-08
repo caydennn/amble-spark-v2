@@ -118,7 +118,7 @@ export async function handlePostMessageActions(
 
     // choose random prompt to send
     const toSend = prompts[Math.floor(Math.random() * prompts.length)];
-    await sendPromptToMatch(matchId, toSend);
+    await sendPromptToMatch(matchId, toSend, currentLevel);
   } catch (e) {
     console.error("Error generating prompt", e);
   } finally {

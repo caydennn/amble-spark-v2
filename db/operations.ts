@@ -54,7 +54,7 @@ export async function createMatchWithUsers(
     const randomPrompts = await db
       .select()
       .from(prompts)
-      .where(eq(prompts.level, 1));
+      .where(eq(prompts.level, 0));
 
     console.log("got random prompts", randomPrompts);
     const prompt =
