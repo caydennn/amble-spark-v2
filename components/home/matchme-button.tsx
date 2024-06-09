@@ -10,5 +10,5 @@ type MatchMeButtonProps = {
 export const MatchMeButton: React.FC<MatchMeButtonProps> = ({ children }) => {
   const { pending } = useFormStatus();
 
-  return <Button className="w-[200px] group">{pending ? 'loading' : children}</Button>;
+  return <Button className="w-[350px] h-[60px] text-lg group">{pending ? 'loading' : children}</Button>;
 };

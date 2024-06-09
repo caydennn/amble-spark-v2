@@ -1,8 +1,9 @@
 import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import hero from "@/assets/hero.svg"
+import hero from "@/assets/hero.svg";
 import Image from "next/image";
+
 const Landing = () => {
   return (
     <div className="animate-in  gap-20 opacity-100 px-3">
